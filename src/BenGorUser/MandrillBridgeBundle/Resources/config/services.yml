@@ -1,0 +1,22 @@
+# This file is part of the BenGorUser package.
+#
+# (c) Beñat Espiña <benatespina@gmail.com>
+# (c) Gorka Laucirica <gorka.lauzirika@gmail.com>
+#
+# For the full copyright and license information, please view the LICENSE
+# file that was distributed with this source code.
+
+services:
+    mandrill:
+        class: Mandrill
+        arguments:
+            - '@=container.hasParameter("mandrill_api_key") ? parameter("mandrill_api_key") : null'
+
+    bengor_user.mandrill.infrastructure.mailing.mandrill_user_mailer:
+        class: BenGorUser\MandrillBridge\Infrastructure\Mailing\MandrillUserMailer
+        arguments:
+            - '@mandrill'
+        public: false
+
+    bengor_user.mailer.mandrill:
+        alias: bengor_user.mandrill.infrastructure.mailing.mandrill_user_mailer
