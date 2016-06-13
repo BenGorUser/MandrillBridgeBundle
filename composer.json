@@ -1,7 +1,7 @@
 {
     "name": "bengor-user/mandrill-bridge-bundle",
     "description": "Symfony bundle that glues UserBundle and MandrillBridge",
-    "keywords": ["user", "bundle", "symfony", "swift-mailer", "ddd"],
+    "keywords": ["user", "bundle", "symfony", "mandrill", "ddd"],
     "license": "MIT",
     "type": "symfony-bundle",
     "authors": [
@@ -18,12 +18,12 @@
     ],
     "require": {
         "php": "^5.5 || ^7.0",
-        "bengor-user/mandrill-bridge": "dev-master",
-        "bengor-user/user-bundle": "0.6.x-dev",
+        "bengor-user/mandrill-bridge": "^1.0.0",
+        "bengor-user/user-bundle": "^0.6",
         "symfony/expression-language": "^2.8 || ^3.0"
     },
     "require-dev": {
-        "fabpot/php-cs-fixer": "^1.11",
+        "friendsofphp/php-cs-fixer": "^1.11",
         "phpspec/phpspec": "^2.5"
     },
     "scripts": {
@@ -41,9 +41,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0.x-dev"
+            "dev-master": "1.1.x-dev"
         }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
